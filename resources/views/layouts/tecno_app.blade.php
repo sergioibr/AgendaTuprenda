@@ -47,8 +47,9 @@
 @endphp
 <header>
     <div class="navbar-fixed">
+        @if (@auth()->user()->rol === 'Admin')
         <nav class="navbar navbar_color">
-            <div class="nav-wrapper"><a href="#!" class="brand-logo text_color titulo">Arregla Tu Prenda Xpress</a>
+            <div class="nav-wrapper" href="{{route('administrador.index')}}"><a href="{{route('administrador.index')}}" class="brand-logo text_color titulo">Arregla Tu Prenda Xpress</a>
                 <ul id="nav-mobile" class="right">
                     <li class="hide-on-med-and-down">
                         <div class="col s6">
@@ -67,6 +68,51 @@
                 </div>
 
         </nav>
+        @endif
+        @if (@auth()->user()->rol === 'Cliente')
+        <nav class="navbar navbar_color">
+            <div class="nav-wrapper" href="{{route('cliente.index')}}"><a href="{{route('cliente.index')}}" class="brand-logo text_color titulo">Arregla Tu Prenda Xpress</a>
+                <ul id="nav-mobile" class="right">
+                    <li class="hide-on-med-and-down">
+                        <div class="col s6">
+                            <input id="search" type="text" name="dato" class="validate" placeholder="Buscar">
+                        </div>
+                    </li>
+                    <li><a href="{{route('admin.tema.show')}}" class="waves-effect text_color"><i class="material-icons">settings</i></a></li>
+                    <li><a href="{{ route('logout') }}"   class="waves-effect text_color" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"><i class="material-icons">close</i></a></li>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </ul><a href="#!" data-target="slide-out" class="sidenav-trigger left text_color"><i class="material-icons">menu</i></a>
+
+
+                </div>
+
+        </nav>
+        @endif
+        @if (@auth()->user()->rol === 'Empleado')
+        <nav class="navbar navbar_color">
+            <div class="nav-wrapper" href="{{route('empleado.index')}}"><a href="{{route('empleado.index')}}" class="brand-logo text_color titulo">Arregla Tu Prenda Xpress</a>
+                <ul id="nav-mobile" class="right">
+                    <li class="hide-on-med-and-down">
+                        <div class="col s6">
+                            <input id="search" type="text" name="dato" class="validate" placeholder="Buscar">
+                        </div>
+                    </li>
+                    <li><a href="{{route('admin.tema.show')}}" class="waves-effect text_color"><i class="material-icons">settings</i></a></li>
+                    <li><a href="{{ route('logout') }}"   class="waves-effect text_color" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"><i class="material-icons">close</i></a></li>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </ul><a href="#!" data-target="slide-out" class="sidenav-trigger left text_color"><i class="material-icons">menu</i></a>
+
+
+                </div>
+
+        </nav>
+        @endif
     </div>
     <ul id="slide-out" class="sidenav sidenav_color">
         <li><div class="user-view">
