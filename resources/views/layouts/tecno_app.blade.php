@@ -89,7 +89,7 @@
             <li><a href="{{route('cliente.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Clientes</a></li>
         <li><div class="divider"></div></li>
         <li><a class="subheader text_color titulo">Administrativos</a></li>
-            <li><a href="{{route('cliente.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Tareas</a></li>
+            <li><a href="{{route('tarea.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Tareas</a></li>
             <li><a href="{{route('horario.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Horarios</a></li>
             <li><a href="{{route('item.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Items</a></li>
         <li><a href="#!" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Planillas</a></li>

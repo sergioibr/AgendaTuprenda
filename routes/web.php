@@ -10,6 +10,7 @@ use \App\Http\Controllers\ClienteController;
 use \App\Http\Controllers\EstadisticasController;
 use \App\Http\Controllers\HorarioController;
 use \App\Http\Controllers\ItemController;
+use \App\Http\Controllers\TareaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -80,6 +81,10 @@ Route::middleware(['auth:sanctum', 'verified'])->prefix('admin')->group(function
     Route::get('/item/edit/{id}', [ItemController::class, 'edit'])->name('item.edit');
     Route::put('/item/{id}', [ItemController::class, 'update'])->name('item.update');
     Route::delete('/item/{id}', [ItemController::class, 'destroy'])->name('item.destroy');
+    
+    //Tareas
+    Route::resource('tarea', TareaController::class);
+    Route::get('/tareaFinalizada/{id}', [TareaController::class, 'finalizarTarea'])->name('finalizarTarea');
 
 });
 

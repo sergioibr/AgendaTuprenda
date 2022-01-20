@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Tarea;
+use App\Models\Pagina;
+use App\Models\Item;
+use App\Models\Empleado;
+use Carbon\Carbon;
 
 class TareaController extends Controller
 {
@@ -13,7 +18,10 @@ class TareaController extends Controller
      */
     public function index()
     {
-        //
+        Pagina::contarPagina(\request()->path());
+        $tareas = Tarea::all();
+   
+        return view('tareas.index', ['tareas'=>$tareas]);
     }
 
     /**
@@ -22,8 +30,11 @@ class TareaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    {   
+        Pagina::contarPagina(\request()->path());
+        $items = Item::all();
+        $empleados = Empleado::all();
+        return view('tareas.create', compact('items','empleados'));
     }
 
     /**
@@ -34,7 +45,13 @@ class TareaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Pagina::contarPagina(\request()->path());
+        $tarea = new Tarea($request->all());
+        $tarea->estado = "En Proceso";
+        $tarea->duracionReal = "";
+        $tarea->fecha_tarea = Carbon::now()->format('Y-m-d');
+        $tarea->save();
+        return redirect()->route('tarea.index');
     }
 
     /**
@@ -45,7 +62,13 @@ class TareaController extends Controller
      */
     public function show($id)
     {
-        //
+        Pagina::contarPagina(\request()->path());
+        $tarea = Tarea::findOrFail($id);
+        // $tarea->load('items','persona');  //No me funca las consultas anidadas :'v
+        // dd($tarea);
+        $encargado = Empleado::where('id',$tarea->id_persona)->first();
+        $item = Item::where('id',$tarea->id_item)->first();
+        return view('tareas.show', compact('tarea','encargado','item'));
     }
 
     /**
@@ -56,9 +79,21 @@ class TareaController extends Controller
      */
     public function edit($id)
     {
-        //
+        Pagina::contarPagina(\request()->path());
+        $tarea = Tarea::findOrFail($id);
+        $empleados = Empleado::all();
+        $items = Item::all();
+        return view('tareas.edit', compact('tarea','empleados','items'));
     }
 
+
+    public function finalizarTarea($id){
+        Pagina::contarPagina(\request()->path());
+        $tarea = Tarea::findOrFail($id);
+        $empleados = Empleado::all();
+        $items = Item::all();
+        return view('tareas.finalizado', compact('tarea','empleados','items'));
+    }
     /**
      * Update the specified resource in storage.
      *
@@ -68,7 +103,17 @@ class TareaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $tarea = Tarea::findOrFail($id);
+        $tarea->descripcion = $request->descripcion;
+        $tarea->duracionEstimada = $request->duracionEstimada;
+        $tarea->duracionReal = $request->duracionReal;
+        $tarea->prioridad = $request->prioridad;
+        $tarea->estado = $request->estado;
+        $tarea->tipo_tarea = $request->tipo_tarea;
+        $tarea->id_persona = $request->id_persona;
+        $tarea->id_item = $request->id_item;
+        $tarea->update();
+        return redirect()->route('tarea.index');
     }
 
     /**
