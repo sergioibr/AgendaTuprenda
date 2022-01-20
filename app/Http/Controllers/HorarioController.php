@@ -33,7 +33,7 @@ class HorarioController extends Controller
         Pagina::contarPagina(\request()->path());
         $horarios = Horario::all();
         $empleados = Empleado::all();
-        return view('horario.create', ['horarios'=>$horarios, 'empleados'=>$empleados]);
+        return view('horario.create', compact('horarios','empleados'));
     }
 
     public function store(HorarioStoreRequest $request)

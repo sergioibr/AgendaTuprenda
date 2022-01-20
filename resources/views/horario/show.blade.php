@@ -28,6 +28,12 @@
                         <div class="col s8 offset-s2 m8">
                             <p class="accent-color-text">{{$horario->cantidad_extra}}</p>
                         </div>
+                        <div class="col s12 m4">
+                            <p class="light-secondary-color title-text-style ">Persona asignada :</p>
+                        </div>
+                        <div class="col s8 offset-s2 m8">
+                            <p class="accent-color-text">{{$horario->persona->nombre}}</p>
+                        </div>
 
                     </div>
 

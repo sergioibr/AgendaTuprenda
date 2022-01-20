@@ -124,6 +124,8 @@ class TareaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tarea = Tarea::findOrFail($id);
+        $tarea->delete();
+        return redirect()->route('tarea.index');
     }
 }

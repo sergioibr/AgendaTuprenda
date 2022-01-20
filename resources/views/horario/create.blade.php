@@ -21,9 +21,9 @@
                                 <input id="cantidad_extra" name="cantidad_extra" type="number" class="validate" oninvalid="setCustomValidity('Ingresa un cantidad extra')" oninput="setCustomValidity('')" required>
                                 <label for="cantidad_extra">Cantidad extra :</label>
                             </div>
-                            <div class="input-field col s12 m6">
+                            <div class="input-field col s6">
                                 <select name="id_persona" oninvalid="setCustomValidity('Seleccione un persona')" oninput="setCustomValidity('')" required>
-                                    <option value="1" disabled selected>Escoja uno</option>
+                                    <option value="" disabled selected>Escoja uno</option>
                                     @foreach($empleados as $empleado)
                                         <option value="{{$empleado->id}}">{{$empleado->cargo}}</option>
                                     @endforeach
