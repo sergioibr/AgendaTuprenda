@@ -10,7 +10,7 @@ class EmpleadoTarea extends Model
 {
     use SoftDeletes;
     protected $table = 'empleados_tareas';
-    protected $fillable = ['id','id_empleados','id_tareas'];
+    protected $fillable = ['id','id_empleados','nombre','descripcion','id_tareas'];
 
     public function empleado()
     {

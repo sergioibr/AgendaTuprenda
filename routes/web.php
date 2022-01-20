@@ -11,6 +11,7 @@ use \App\Http\Controllers\EstadisticasController;
 use \App\Http\Controllers\HorarioController;
 use \App\Http\Controllers\ItemController;
 use \App\Http\Controllers\TareaController;
+use \App\Http\Controllers\EmpleadoTareaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,8 +35,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::middleware(['auth:sanctum', 'verified'])->prefix('admin')->group(function () {
     Route::get('/home', function () {
         \App\Models\Pagina::contarPagina(request()->path());
-        return view('tecno.home');
-    });
+        return view('estadisticas.index');
+    })->name('home');
     Route::get('/tema', [TemaController::class, 'show'])->name('admin.tema.show');
     Route::put('/tema', [TemaController::class, 'update'])->name('admin.tema.update');
 
@@ -81,6 +82,14 @@ Route::middleware(['auth:sanctum', 'verified'])->prefix('admin')->group(function
     Route::get('/item/edit/{id}', [ItemController::class, 'edit'])->name('item.edit');
     Route::put('/item/{id}', [ItemController::class, 'update'])->name('item.update');
     Route::delete('/item/{id}', [ItemController::class, 'destroy'])->name('item.destroy');
+    //empleado Tareas
+    Route::get('/empleado_tarea', [EmpleadoTareaController::class, 'index'])->name('empleado_tarea.index');
+    Route::get('/empleado_tarea/create', [EmpleadoTareaController::class, 'create'])->name('empleado_tarea.create');
+    Route::get('/empleado_tarea/{id}', [EmpleadoTareaController::class, 'show'])->name('empleado_tarea.show');
+    Route::post('/empleado_tarea', [EmpleadoTareaController::class, 'store'])->name('empleado_tarea.store');
+    Route::get('/empleado_tarea/edit/{id}', [EmpleadoTareaController::class, 'edit'])->name('empleado_tarea.edit');
+    Route::put('/empleado_tarea/{id}', [EmpleadoTareaController::class, 'update'])->name('empleado_tarea.update');
+    Route::delete('/empleado_tarea/{id}', [EmpleadoTareaController::class, 'destroy'])->name('empleado_tarea.destroy');
     
     //Tareas
     Route::resource('tarea', TareaController::class);

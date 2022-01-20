@@ -15,6 +15,8 @@ class CreateEmpleadosTareasTable extends Migration
     {
         Schema::create('empleados_tareas', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->String('nombre');
+            $table->String('descripcion');
             $table->unsignedBigInteger('id_empleados');
             $table->unsignedBigInteger('id_tareas');
             $table->timestamps();

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="description" content="">
-    <title>Home - Admin</title>
+    <title>Agenda Tu Prenda Xpress</title>
     <link href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css" rel="stylesheet">
     <link href="{{asset('materialize/css/jqvmap.css')}}" rel="stylesheet">
     <link href="{{asset('materialize/css/flag-icon-css/css/flag-icon.min.css')}}" rel="stylesheet">
@@ -48,7 +48,7 @@
 <header>
     <div class="navbar-fixed">
         <nav class="navbar navbar_color">
-            <div class="nav-wrapper"><a href="#!" class="brand-logo text_color titulo">Home</a>
+            <div class="nav-wrapper"><a href="#!" class="brand-logo text_color titulo">Agenda Tu Prenda Xpress</a>
                 <ul id="nav-mobile" class="right">
                     <li class="hide-on-med-and-down">
                         <div class="col s6">
@@ -92,13 +92,13 @@
             <li><a href="{{route('tarea.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Tareas</a></li>
             <li><a href="{{route('horario.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Horarios</a></li>
             <li><a href="{{route('item.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Items</a></li>
-        <li><a href="#!" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Planillas</a></li>
+        <li><a href="{{route('empleado_tarea.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Planillas</a></li>
         <li><div class="divider"></div></li>
         <li><a class="subheader text_color titulo">Reportes</a></li>
         <li><a href="{{route('reporte_evento')}}" target="_blank" class="text_color titulo"><i class="material-icons text_color">cloud</i>Reporte de Eventos</a></li>
         <li><a href="{{route('reporte_usuario')}}" target="_blank" class="text_color titulo"><i class="material-icons text_color">cloud</i>Reporte de Usuarios</a></li>
         <li><a class="subheader text_color titulo">Estadísticas</a></li>
-            <li><a href="#!" class="text_color titulo"><i class="material-icons text_color">cloud</i>Estadísticas de Vísitas</a></li>
+            <li><a href="{{route('home')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Estadísticas de Vísitas</a></li>
         @endif
         @if (@auth()->user()->rol === 'Cliente')
         <li><a href="{{route('cliente.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Tareas</a></li>
@@ -185,5 +185,6 @@
         });
     });
 </script>
+@yield('script')
 </body>
 </html>
