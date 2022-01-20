@@ -66,13 +66,13 @@ class DatabaseSeeder extends Seeder
         $user->save();
 
         $persona = new Persona();
-        $persona->nombre = 'Rosanyela';
-        $persona->apellido_paterno = 'Hurtado';
-        $persona->apellido_materno = 'Rico';
-        $persona->carnet_identidad = '9610003';
-        $persona->direccion = 'av mutualista';
-        $persona->fecha_nacimiento = '1998/01/01';
-        $persona->telefono = '7030333';
+        $persona->nombre = 'Milena';
+        $persona->apellido_paterno = 'Franco';
+        $persona->apellido_materno = 'Mollinedo';
+        $persona->carnet_identidad = '8198090';
+        $persona->direccion = 'av mutualista calle 13';
+        $persona->fecha_nacimiento = '1998/06/06';
+        $persona->telefono = '75328268';
         $persona->tipo = 1;
         $persona->save();
 
@@ -82,7 +82,7 @@ class DatabaseSeeder extends Seeder
         $cliente->save();
 
         $user = new User();
-        $user->email= 'rosanyela@gmail.com';
+        $user->email= 'milena@gmail.com';
         $user->password = bcrypt('1234');
         $user->rol = 'Cliente';
         $user->id_persona = $persona->id;
