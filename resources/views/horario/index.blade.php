@@ -36,8 +36,9 @@
             fila[1] = '{{$horario->turno}}';
             fila[2] = '{{$horario->duracion}}';
             fila[3] = '{{$horario->cantidad_extra}}';
+            fila[4] = '{{$horario->persona->nombre}}';
      
-            fila[4] = '<div>' +
+            fila[5] = '<div>' +
                 '<span class="new badge positive-primary-color" data-badge-caption="" style="margin-right:5px"><a href=" ' + "{{route('horario.show', [$horario->id])}}" + ' " class="white-text" >Detalle</a></span>' +
                 '<span class="new badge deep-orange darken-4" data-badge-caption="" style="margin-right:5px"><a href=" ' + "{{route('horario.edit', [$horario->id])}}" + ' " class="white-text" >Editar</a></span>' +
                 '<span class="new badge red darken-4" data-badge-caption="" style="margin-right:5px"><a href=" ' + "{{route('horario.destroy', [$horario->id])}}" + ' " class="white-text" >Eliminar</a></span>' +

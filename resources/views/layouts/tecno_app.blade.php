@@ -95,8 +95,9 @@
         <li><a href="{{route('empleado_tarea.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Planillas</a></li>
         <li><div class="divider"></div></li>
         <li><a class="subheader text_color titulo">Reportes</a></li>
-        <li><a href="{{route('reporte_evento')}}" target="_blank" class="text_color titulo"><i class="material-icons text_color">cloud</i>Reporte de Eventos</a></li>
+        <li><a href="{{route('reporte_tarea')}}" target="_blank" class="text_color titulo"><i class="material-icons text_color">cloud</i>Reporte de Tareas</a></li>
         <li><a href="{{route('reporte_usuario')}}" target="_blank" class="text_color titulo"><i class="material-icons text_color">cloud</i>Reporte de Usuarios</a></li>
+        <li><a href="{{route('reporte_item')}}" target="_blank" class="text_color titulo"><i class="material-icons text_color">cloud</i>Reporte de Items</a></li>
         <li><a class="subheader text_color titulo">Estadísticas</a></li>
             <li><a href="{{route('home')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Estadísticas de Vísitas</a></li>
         @endif

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Evento;
+use App\Models\Tarea;
 use App\Models\User;
+use App\Models\Item;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Support\Facades\App;
@@ -19,19 +20,20 @@ class PdfController extends Controller
         return $pdf->stream('archivo'.'.pdf');
 
     }
-    public function reporte_difusiones(){
+ 
+    public function reporte_tarea(){
 
-        $usuarios = User::all();
-        $view=view('vista-pdf', compact('usuarios'))->render();
+        $tareas= Tarea::all();
+        $view=view('tarea-pdf', compact('tareas'))->render();
         $pdf= App::make('dompdf.wrapper');
         $pdf->loadHTML($view);
         return $pdf->stream('archivo'.'.pdf');
 
     }
-    public function reporte_evento(){
+    public function reporte_item(){
 
-        $eventos= Evento::all();
-        $view=view('evento-pdf', compact('eventos'))->render();
+        $items= Item::all();
+        $view=view('item-pdf', compact('items'))->render();
         $pdf= App::make('dompdf.wrapper');
         $pdf->loadHTML($view);
         return $pdf->stream('archivo'.'.pdf');

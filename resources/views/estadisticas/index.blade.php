@@ -58,14 +58,14 @@
     <script>
 
         var ctx = document.getElementById('paginas').getContext('2d');
-      
-        var datos = [5,8]
-        var labels = ['admin_edit','consulta_show'];
+        var datos = [5,8];
+        var labels = ['tarea_show','consulta_show'];
         var myChart = new Chart(ctx, {
             type: 'bar',
             data: {
                 labels: labels,
                 datasets: [{
+                    label:  ['tarea_show'],
                     data: datos,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
@@ -189,7 +189,7 @@
             data: {
                 labels: ['Consulta', 'Visita'],
                 datasets: [{
-                    label: '# pagos',
+                    label: 'pagos',
                     data: datos,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',

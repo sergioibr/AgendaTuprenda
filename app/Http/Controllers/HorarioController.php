@@ -39,7 +39,7 @@ class HorarioController extends Controller
     public function store(HorarioStoreRequest $request)
     {
         $horario = new Horario($request->all());
-        $horario->id_persona = auth()->user()->id_persona;
+
         $horario->save();
         return redirect()->route('horario.index');
     }
@@ -71,3 +71,4 @@ class HorarioController extends Controller
         return redirect()->route('horario.index');
     }
 }
+

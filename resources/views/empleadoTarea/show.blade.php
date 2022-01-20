@@ -4,7 +4,7 @@
         <div class="col s12 m10 l8 xl8 offset-m1 offset-l2 offset-xl2">
             <div class="card">
                 <div class="card-content">
-                    <h5 style="text-align: center">Detalle de la Tarea</h5>
+                    <h5 style="text-align: center">Detalle de la Planilla</h5>
                     <hr>
                     <br>
                     <div class="row">

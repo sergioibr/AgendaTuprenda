@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Reporte Evento </title>
+<title>Reporte Item </title>
 <head>
     <style>
         table{
@@ -19,16 +19,25 @@
     </style>
 </head>
 <body>
-<h2>Reporte de Evento</h2>
+<h2>Reporte de Items</h2>
 <table>
     <tr>
-        <th>Titulo</th>
-        <th>Descripcion</th>
-        <th>Fecha </th>
-        <th>Direccion</th>
+
+        <th>Numero</th>
+        <th>Nombre</th>
+        <th>Descripion</th>
 
     </tr>
+    @foreach($items as $item)
+        <tr>
+            <td>{{$item->id}}</td>
+            <td>{{$item->nombre}}</td>
+            <td>{{$item->descripcion}}</td>
 
+
+        </tr>
+    @endforeach
 </table>
+
 </body>
 </html>

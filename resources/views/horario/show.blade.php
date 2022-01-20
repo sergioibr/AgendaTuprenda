@@ -25,13 +25,13 @@
                         </div>
                         <div class="col s8 offset-s2 m8">
                             <p class="accent-color-text">{{$horario->cantidad_extra}}</p>
-                        
+                        </div>
 
                     </div>
 
                 </div>
                 <div class="card-action cancel-primary-color">
-                    <a href="{{route('item.index')}}" class="btn deep-purple darken-3 waves-effect waves-light" type="submit">aceptar</a>
+                    <a href="{{route('horario.index')}}" class="btn deep-purple darken-3 waves-effect waves-light" type="submit">aceptar</a>
 
                 </div>
             </div>

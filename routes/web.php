@@ -99,6 +99,7 @@ Route::middleware(['auth:sanctum', 'verified'])->prefix('admin')->group(function
 
 //Reportes
 Route::get('pdf',[PdfController::class,'reporte_usuario'])->name('reporte_usuario');
-Route::get('reporte_evento',[PdfController::class,'reporte_evento'])->name('reporte_evento');
+Route::get('reporte_item',[PdfController::class,'reporte_item'])->name('reporte_item');
+Route::get('reporte_tarea',[PdfController::class,'reporte_tarea'])->name('reporte_tarea');
 
 
