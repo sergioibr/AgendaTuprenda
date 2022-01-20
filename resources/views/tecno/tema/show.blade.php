@@ -26,7 +26,7 @@
                                 <label class="text_color contenido">Seleccione un tema</label>
                             </div>
                         </div>
-                        <button class="btn deep-purple darken-3 waves-effect waves-light" type="submit" name="action">Guardar
+                        <button class="btn blue darken-4 waves-effect waves-light" type="submit" name="action">Guardar
                         </button>
                     </div>
 

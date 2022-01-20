@@ -76,9 +76,9 @@
 
                 </div>
                 <div class="card-action cancel-primary-color">
-                    <a href="{{route('tarea.index')}}" class="btn deep-purple darken-3 waves-effect waves-light" type="submit">aceptar</a>
+                    <a href="{{route('tarea.index')}}" class="btn blue darken-4 waves-effect waves-light" type="submit">aceptar</a>
                     @if ($tarea->estado == "En Proceso")
-                        <a href="{{route('finalizarTarea', [$tarea->id])}}" class="btn deep-purple darken-3 waves-effect waves-light">Finalizar tarea</a>
+                        <a href="{{route('finalizarTarea', [$tarea->id])}}" class="btn blue darken-4 waves-effect waves-light">Finalizar tarea</a>
                     @endif
                 </div>
             </div>

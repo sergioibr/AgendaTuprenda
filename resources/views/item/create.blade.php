@@ -20,7 +20,7 @@
                             <div class="row">
                             <div class="col s12 right-align">
                                 <a href="{{route('item.index')}}" class="btn negative-primary-color" type="submit">Cancelar</a>
-                            <button class="btn deep-purple darken-3 waves-effect waves-light" type="submit">Guardar
+                            <button class="btn blue darken-4 waves-effect waves-light" type="submit">Guardar
                             </button>
                             </div>
                         </div>

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="description" content="">
-    <title>Agenda Tu Prenda Xpress</title>
+    <title>Arregla Tu Prenda Xpress</title>
     <link href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css" rel="stylesheet">
     <link href="{{asset('materialize/css/jqvmap.css')}}" rel="stylesheet">
     <link href="{{asset('materialize/css/flag-icon-css/css/flag-icon.min.css')}}" rel="stylesheet">
@@ -48,7 +48,7 @@
 <header>
     <div class="navbar-fixed">
         <nav class="navbar navbar_color">
-            <div class="nav-wrapper"><a href="#!" class="brand-logo text_color titulo">Agenda Tu Prenda Xpress</a>
+            <div class="nav-wrapper"><a href="#!" class="brand-logo text_color titulo">Arregla Tu Prenda Xpress</a>
                 <ul id="nav-mobile" class="right">
                     <li class="hide-on-med-and-down">
                         <div class="col s6">
@@ -70,39 +70,41 @@
     </div>
     <ul id="slide-out" class="sidenav sidenav_color">
         <li><div class="user-view">
-                <div class="background" style="background-color: #512da8">
+                <div class="background" style="background-color: #1f2eb4">
                 </div>
-                <a href="#user"><img class="circle" src="{{asset('images/pokemon-pikachu.jpg')}}"></a>
+                <a href="#user"><img class="circle" src="{{asset('images/textil.jpg')}}"></a>
                 <a href="#name"><span class="white-text name titulo">{{auth()->user()->persona->nombre . ' ' . auth()->user()->persona->apellido_paterno}}</span></a>
                 <a href="#email"><span class="white-text email titulo">{{auth()->user()->email}}</span></a>
             </div></li>
         @if (@auth()->user()->rol === 'Empleado')
-			
-            <li><a href="#!" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Tareas</a></li>
-			<li><a href="{{route('cliente.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Correos</a></li>
-            <li><a href="{{route('cliente.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Difusiones</a></li>
+        <li><a class="subheader text_color titulo">Gestión Empleado</a></li>
+                
+            <li><a href="{{route('tarea.index')}}" class="text_color titulo"><i class="material-icons text_color">laptop</i>Tareas</a></li>
+			<li><a href="{{route('horario.index')}}" class="text_color titulo"><i class="material-icons text_color">laptop</i>Horarios</a></li>
+            <li><a href="{{route('item.index')}}" class="text_color titulo"><i class="material-icons text_color">laptop</i>Items</a></li>
+        <li><div class="divider"></div></li>
 		@endif
         @if (@auth()->user()->rol === 'Admin')
-        <li><a class="subheader text_color titulo">Super Usuario</a></li>
-            <li><a href="{{route('administrador.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Administradores</a></li>
-            <li><a href="{{route('empleado.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Empleados</a></li>
-            <li><a href="{{route('cliente.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Clientes</a></li>
+        <li><a class="subheader text_color titulo">Gestión Usuario</a></li>
+            <li><a href="{{route('administrador.index')}}" class="text_color titulo"><i class="material-icons text_color">star</i>Administradores</a></li>
+            <li><a href="{{route('empleado.index')}}" class="text_color titulo"><i class="material-icons text_color">star</i>Empleados</a></li>
+            <li><a href="{{route('cliente.index')}}" class="text_color titulo"><i class="material-icons text_color">star</i>Clientes</a></li>
         <li><div class="divider"></div></li>
-        <li><a class="subheader text_color titulo">Administrativos</a></li>
-            <li><a href="{{route('tarea.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Tareas</a></li>
-            <li><a href="{{route('horario.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Horarios</a></li>
-            <li><a href="{{route('item.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Items</a></li>
-        <li><a href="{{route('empleado_tarea.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Planillas</a></li>
+        <li><a class="subheader text_color titulo">Gestión Administrativos</a></li>
+            <li><a href="{{route('tarea.index')}}" class="text_color titulo"><i class="material-icons text_color">star</i>Tareas</a></li>
+            <li><a href="{{route('horario.index')}}" class="text_color titulo"><i class="material-icons text_color">star</i>Horarios</a></li>
+            <li><a href="{{route('item.index')}}" class="text_color titulo"><i class="material-icons text_color">star</i>Items</a></li>
+        <li><a href="{{route('empleado_tarea.index')}}" class="text_color titulo"><i class="material-icons text_color">star</i>Planillas</a></li>
         <li><div class="divider"></div></li>
-        <li><a class="subheader text_color titulo">Reportes</a></li>
-        <li><a href="{{route('reporte_tarea')}}" target="_blank" class="text_color titulo"><i class="material-icons text_color">cloud</i>Reporte de Tareas</a></li>
-        <li><a href="{{route('reporte_usuario')}}" target="_blank" class="text_color titulo"><i class="material-icons text_color">cloud</i>Reporte de Usuarios</a></li>
-        <li><a href="{{route('reporte_item')}}" target="_blank" class="text_color titulo"><i class="material-icons text_color">cloud</i>Reporte de Items</a></li>
+        <li><a class="subheader text_color titulo">Gestión de Reportes</a></li>
+        <li><a href="{{route('reporte_tarea')}}" target="_blank" class="text_color titulo"><i class="material-icons text_color">star</i>Tareas</a></li>
+        <li><a href="{{route('reporte_usuario')}}" target="_blank" class="text_color titulo"><i class="material-icons text_color">star</i>Usuarios</a></li>
+        <li><a href="{{route('reporte_item')}}" target="_blank" class="text_color titulo"><i class="material-icons text_color">star</i>Items</a></li>
         <li><a class="subheader text_color titulo">Estadísticas</a></li>
-            <li><a href="{{route('home')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Estadísticas de Vísitas</a></li>
+            <li><a href="{{route('home')}}" class="text_color titulo"><i class="material-icons text_color">star</i>Estadísticas de Vísitas</a></li>
         @endif
         @if (@auth()->user()->rol === 'Cliente')
-        <li><a href="{{route('cliente.index')}}" class="text_color titulo"><i class="material-icons text_color">cloud</i>Gestionar Tareas</a></li>
+        <li><a href="{{route('tarea.index')}}" class="text_color titulo"><i class="material-icons text_color">local_mall</i>Gestionar Tareas</a></li>
         @endif
 
     </ul>
@@ -112,13 +114,15 @@
         @yield('contenido')
     </div>
 </main>
-<footer class="page-footer footer_color">
+
+<footer class="page-footer footer_color" >
     <div class="container">
-        <div class="row">
+        
+        <div class="center-align">
             <div class="col s6 m3">
-                <img class="materialize-logo"  style="width: 100px; height: 100px;" src="{{asset('images/evans.png')}}" alt="Materialize">
-                <p class="text_color contenido">Tecnología Web.</p>
-                <p class="text_color contenido" style="font-size: 32px">visitas : {{$pagina->visitas}}</p>
+                <img class="materialize-logo"  style="width: 257px; height: 100px;" src="{{asset('images/evans.png')}}" alt="Materialize">
+                <p class="text_color contenido">Grupo 15SC - INF513</p>
+                <p class="text_color contenido" style="font-size: 16px">N° de visitas: {{$pagina->visitas}}</p>
             </div>
         </div>
     </div>

@@ -4,7 +4,9 @@
         <div class="col s12 m10 l8 xl8 offset-m1 offset-l2 offset-xl2">
             <div class="card">
                 <div class="card-content">
-
+                <h5 style="text-align: center">Detalle del Empleado</h5>
+                    <hr>
+                    <br>
                     <div class="row">
 
                         <div class="col s12 m4">
@@ -65,7 +67,7 @@
 
                 </div>
                 <div class="card-action cancel-primary-color">
-                    <a href="{{route('empleado.index')}}" class="btn deep-purple darken-3 waves-effect waves-light" type="submit">aceptar</a>
+                    <a href="{{route('empleado.index')}}" class="btn blue darken-4 waves-effect waves-light" type="submit">aceptar</a>
 
                 </div>
             </div>

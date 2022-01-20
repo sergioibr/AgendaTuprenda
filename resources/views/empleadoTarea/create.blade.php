@@ -34,7 +34,7 @@
                         <div class="row">
                             <div class="col s12 right-align">
                                 <a href="{{route('empleado_tarea.index')}}" class="btn negative-primary-color" type="submit">cancelar</a>
-                            <button class="btn deep-purple darken-3 waves-effect waves-light" type="submit">Guardar
+                            <button class="btn blue darken-4 waves-effect waves-light" type="submit">Guardar
                             </button>
                             </div>
                         </div>

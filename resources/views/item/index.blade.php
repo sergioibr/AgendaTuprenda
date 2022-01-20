@@ -1,7 +1,7 @@
 @extends('layouts.tecno_app')
 @section('contenido')
     <div class="row">
-        <a href="{{route('item.create')}}" class="deep-purple darken-3 waves-effect waves-light btn">Registrar Item</a>
+        <a href="{{route('item.create')}}" class="blue darken-4 waves-effect waves-light btn">Registrar Item</a>
     </div>
 
     <div class="row">

@@ -38,7 +38,7 @@
 
                 </div>
                 <div class="card-action cancel-primary-color">
-                    <a href="{{route('empleado_tarea.index')}}" class="btn deep-purple darken-3 waves-effect waves-light" type="submit">aceptar</a>
+                    <a href="{{route('empleado_tarea.index')}}" class="btn blue darken-4 waves-effect waves-light" type="submit">aceptar</a>
                     
                 </div>
             </div>

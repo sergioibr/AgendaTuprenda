@@ -1,7 +1,7 @@
 @extends('layouts.tecno_app')
 @section('contenido')
     <div class="row">
-        <a href="{{route('horario.create')}}" class="deep-purple darken-3 waves-effect waves-light btn">Registrar Horario</a>
+        <a href="{{route('horario.create')}}" class="blue darken-4 waves-effect waves-light btn">Registrar Horario</a>
     </div>
 
     <div class="row">

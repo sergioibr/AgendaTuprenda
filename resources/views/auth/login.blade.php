@@ -1,9 +1,10 @@
 <x-guest-layout>
     <x-jet-authentication-card>
-        <title>Eventos RHR</title>
+        <title>Agenda tu prenda</title>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+        <img src="{{asset('images/evans.png')}}" />
         </x-slot>
+    
 
         <x-jet-validation-errors class="mb-4" />
 

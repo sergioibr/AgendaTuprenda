@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head >
     <meta charset="utf-8">
-    <title>Eventos RHR</title>
+    <title>Agenga tu prenda</title>
     <link rel="stylesheet" href="../../css/prueba.css">
     <link rel="shortcut icon" href="{{asset('images/logo.png')}}"/>
 </head>

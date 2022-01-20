@@ -62,7 +62,7 @@
                             <div class="col s12 right-align">
                                 <a href="{{route('empleado.index')}}" class="btn negative-primary-color" type="submit">cancelar</a>
 
-                                <button class="btn deep-purple darken-3 waves-effect waves-light" type="submit">actualizar</button>
+                                <button class="btn blue darken-4 waves-effect waves-light" type="submit">actualizar</button>
                             </div>
                         </div>
 
