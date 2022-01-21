@@ -21,18 +21,7 @@
                             <p class="accent-color-text">{{$EmpleadoTarea->descripcion}}</p>
                         </div>
 
-                        <div class="col s12 m4">
-                            <p class="light-secondary-color title-text-style ">Tarea :</p>
-                        </div>
-                        <div class="col s8 offset-s2 m8">
-                            <p class="accent-color-text">{{$tarea->descripcion}}</p>
-                        </div>
-                        <div class="col s12 m4">
-                            <p class="light-secondary-color title-text-style ">Duracion Estimada :</p>
-                        </div>
-                        <div class="col s8 offset-s2 m8">
-                            <p class="accent-color-text">{{$tarea->duracionEstimada}}</p>
-                        </div>
+                        <!--  -->
                         
                         <div class="col s12 m4">
                             <p class="light-secondary-color title-text-style ">Empleado :</p>

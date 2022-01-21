@@ -54,12 +54,7 @@ class HorarioController extends Controller
     }
 
     public function update($id, HorarioUpdateRequest $request)
-    {
-        $horario = Horario::findOrFail($id);
-        $horario->turno = $request->input('turno');
-        $horario->duracion = $request->input('duracion');
-        $horario->cantidad_extra = $request->input('cantidad_extra');
-        $horario->id_persona = auth()->user()->id_persona;
+    {$horario = new Horario($request->all());
         $horario->save();
         return redirect()->route('horario.index');
     }

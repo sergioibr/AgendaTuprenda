@@ -52,9 +52,6 @@
             <div class="nav-wrapper" href="{{route('administrador.index')}}"><a href="{{route('administrador.index')}}" class="brand-logo text_color titulo">Arregla Tu Prenda Xpress</a>
                 <ul id="nav-mobile" class="right">
                     <li class="hide-on-med-and-down">
-                        <div class="col s6">
-                            <input id="search" type="text" name="dato" class="validate" placeholder="Buscar">
-                        </div>
                     </li>
                     <li><a href="{{route('admin.tema.show')}}" class="waves-effect text_color"><i class="material-icons">settings</i></a></li>
                     <li><a href="{{ route('logout') }}"   class="waves-effect text_color" onclick="event.preventDefault();
@@ -74,9 +71,6 @@
             <div class="nav-wrapper" href="{{route('cliente.index')}}"><a href="{{route('cliente.index')}}" class="brand-logo text_color titulo">Arregla Tu Prenda Xpress</a>
                 <ul id="nav-mobile" class="right">
                     <li class="hide-on-med-and-down">
-                        <div class="col s6">
-                            <input id="search" type="text" name="dato" class="validate" placeholder="Buscar">
-                        </div>
                     </li>
                     <li><a href="{{route('admin.tema.show')}}" class="waves-effect text_color"><i class="material-icons">settings</i></a></li>
                     <li><a href="{{ route('logout') }}"   class="waves-effect text_color" onclick="event.preventDefault();
@@ -96,9 +90,6 @@
             <div class="nav-wrapper" href="{{route('empleado.index')}}"><a href="{{route('empleado.index')}}" class="brand-logo text_color titulo">Arregla Tu Prenda Xpress</a>
                 <ul id="nav-mobile" class="right">
                     <li class="hide-on-med-and-down">
-                        <div class="col s6">
-                            <input id="search" type="text" name="dato" class="validate" placeholder="Buscar">
-                        </div>
                     </li>
                     <li><a href="{{route('admin.tema.show')}}" class="waves-effect text_color"><i class="material-icons">settings</i></a></li>
                     <li><a href="{{ route('logout') }}"   class="waves-effect text_color" onclick="event.preventDefault();
@@ -124,7 +115,7 @@
             </div></li>
         @if (@auth()->user()->rol === 'Empleado')
         <li><a class="subheader text_color titulo">Gestión Empleado</a></li>
-                
+        <li><a href="{{route('empleado.index')}}" class="text_color titulo"><i class="material-icons text_color">star</i>Empleados</a></li>    
             <li><a href="{{route('tarea.index')}}" class="text_color titulo"><i class="material-icons text_color">laptop</i>Tareas</a></li>
 			<li><a href="{{route('horario.index')}}" class="text_color titulo"><i class="material-icons text_color">laptop</i>Horarios</a></li>
             <li><a href="{{route('item.index')}}" class="text_color titulo"><i class="material-icons text_color">laptop</i>Items</a></li>
@@ -147,7 +138,7 @@
         <li><a href="{{route('reporte_usuario')}}" target="_blank" class="text_color titulo"><i class="material-icons text_color">star</i>Usuarios</a></li>
         <li><a href="{{route('reporte_item')}}" target="_blank" class="text_color titulo"><i class="material-icons text_color">star</i>Items</a></li>
         <li><a class="subheader text_color titulo">Estadísticas</a></li>
-            <li><a href="{{route('home')}}" class="text_color titulo"><i class="material-icons text_color">star</i>Estadísticas de Vísitas</a></li>
+            <li><a href="{{route('estadisticas.index')}}" class="text_color titulo"><i class="material-icons text_color">star</i>Estadísticas de Vísitas</a></li>
         @endif
         @if (@auth()->user()->rol === 'Cliente')
         <li><a href="{{route('tarea.index')}}" class="text_color titulo"><i class="material-icons text_color">local_mall</i>Gestionar Tareas</a></li>

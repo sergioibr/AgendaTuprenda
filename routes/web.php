@@ -29,15 +29,17 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    if (@auth()->user()->rol === 'Admin'){
-    return redirect()->route('administrador.index');
-    }
-    if (@auth()->user()->rol === 'Cliente'){
-        return redirect()->route('cliente.index');
-        }
-        if (@auth()->user()->rol === 'Empleado'){
-            return redirect()->route('empleado.index');
-            }
+    \App\Models\Pagina::contarPagina(\request()->path());
+    return view('home');
+    // if (@auth()->user()->rol === 'Admin'){
+    // return redirect()->route('administrador.index');
+    // }
+    // if (@auth()->user()->rol === 'Cliente'){
+    //     return redirect()->route('cliente.index');
+    //     }
+    //     if (@auth()->user()->rol === 'Empleado'){
+    //         return redirect()->route('empleado.index');
+    //         }
 })->name('dashboard');
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {

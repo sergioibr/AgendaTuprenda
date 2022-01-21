@@ -37,9 +37,7 @@
         
             fila[3] = '<div>' +
                 '<span class="new badge positive-primary-color" data-badge-caption="" style="margin-right:5px"><a href=" ' + "{{route('empleado_tarea.show', [$empleado_tarea->id])}}" + ' " class="white-text" >Detalle</a></span>' +
-                '<span class="new badge deep-orange darken-4" data-badge-caption="" style="margin-right:5px"><a href=" ' + "{{route('empleado_tarea.edit', [$empleado_tarea->id])}}" + ' " class="white-text" >Editar</a></span>' +
-                '<span class="new badge red darken-4" data-badge-caption="" style="margin-right:5px"><a href=" ' + "{{route('empleado_tarea.destroy', [$empleado_tarea->id])}}" + ' " class="white-text" >Eliminar</a></span>' +
-                '</div>';
+                '<span class="new badge deep-orange darken-4" data-badge-caption="" style="margin-right:5px"><a href=" ' + "{{route('empleado_tarea.edit', [$empleado_tarea->id])}}" + ' " class="white-text" >Editar</a></span>';
             datos.push(fila);
             @endforeach
             addDatosGeneral(datos);
