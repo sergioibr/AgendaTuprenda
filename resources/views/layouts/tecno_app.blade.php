@@ -115,7 +115,7 @@
             </div></li>
         @if (@auth()->user()->rol === 'Empleado')
         <li><a class="subheader text_color titulo">Gestión Empleado</a></li>
-                
+        <li><a href="{{route('empleado.index')}}" class="text_color titulo"><i class="material-icons text_color">star</i>Empleados</a></li>    
             <li><a href="{{route('tarea.index')}}" class="text_color titulo"><i class="material-icons text_color">laptop</i>Tareas</a></li>
 			<li><a href="{{route('horario.index')}}" class="text_color titulo"><i class="material-icons text_color">laptop</i>Horarios</a></li>
             <li><a href="{{route('item.index')}}" class="text_color titulo"><i class="material-icons text_color">laptop</i>Items</a></li>

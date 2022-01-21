@@ -53,4 +53,10 @@ class EmpleadoTareaController extends Controller
         $EmpleadoTarea->update();
         return redirect()->route('empleado_tarea.index');
     }
+    public function destroy($id)
+    {
+        $EmpleadoTarea = Tarea::findOrFail($id);
+        $EmpleadoTarea->delete();
+        return redirect()->route('empleado_tarea.index');
+    }
 }
