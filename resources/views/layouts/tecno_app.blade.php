@@ -147,7 +147,7 @@
         <li><a href="{{route('reporte_usuario')}}" target="_blank" class="text_color titulo"><i class="material-icons text_color">star</i>Usuarios</a></li>
         <li><a href="{{route('reporte_item')}}" target="_blank" class="text_color titulo"><i class="material-icons text_color">star</i>Items</a></li>
         <li><a class="subheader text_color titulo">Estadísticas</a></li>
-            <li><a href="{{route('home')}}" class="text_color titulo"><i class="material-icons text_color">star</i>Estadísticas de Vísitas</a></li>
+            <li><a href="{{route('estadisticas.index')}}" class="text_color titulo"><i class="material-icons text_color">star</i>Estadísticas de Vísitas</a></li>
         @endif
         @if (@auth()->user()->rol === 'Cliente')
         <li><a href="{{route('tarea.index')}}" class="text_color titulo"><i class="material-icons text_color">local_mall</i>Gestionar Tareas</a></li>

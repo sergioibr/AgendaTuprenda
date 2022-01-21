@@ -1,57 +1,17 @@
 @extends('layouts.tecno_app')
 @section('contenido')
-
-        <!-- <div class="container"> -->
-            <div class="card col s12">
-                <div class="card-header">
-                    <h2>Paginas Visitadas</h2>
-                </div>
-                <div class="card-body">
-                    <canvas id="paginas" width="200px" height="200px"></canvas>
-                </div>
-            </div>
-            <div class="row">
-                <div class="card col s6" style="padding=5px">
-                    <div class="card-header">
-                        <h2>Cantidad de personas</h2>
-                    </div>
-                    <div class="card-body">
-                        <canvas id="personas" width="200px" height="200px"></canvas>
-                    </div>
-                </div>
-                <div class="card col s6">
-                    <div class="card-header">
-                        <h2>Tipos de Atenciones</h2>
-                    </div>
-                    <div class="card-body">
-                        <canvas id="consulta" width="200px" height="200px"></canvas>
-                    </div>
-                </div>
-                <div class="card col s6">
-                    <div class="card-header">
-                        <h2>Tipos de Pagos</h2>
-                    </div>
-                    <div class="card-body">
-                        <canvas id="pagos" width="200px" height="200px"></canvas>
-                    </div>
-                </div>
-                <div class="card col s6">
-                    <div class="card-header">
-                        <h2>Monto Pagados</h2>
-                    </div>
-                    <div class="card-body">
-                        <canvas id="monto" width="200px" height="200px"></canvas>
-                    </div>
-                </div>
-            </div>
-        <!-- </div> -->
-   
-
-   
-
+@if (@auth()->user()->rol === 'Admin')
+<h1>Bienvenido admin</h1>
+@endif
+@if (@auth()->user()->rol === 'Cliente')
+<h1>Bienvenido cliente</h1>
+@endif
+@if (@auth()->user()->rol === 'Empleado')
+<h1>Bienvenido empleado</h1>
+@endif
 @endsection
 
-    @section('script')
+    <!-- @section('script')
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
     <script>
 
@@ -89,8 +49,8 @@
 
 
         var ctx = document.getElementById('personas').getContext('2d');
-        var datos = {{$persona_lista}};
-        var labels = ['Administrador','Empleado','Cliente'];
+        var datos = [1,3,5];
+        var labels = ['Cliente','Administrador','Doctor'];
         var myChart = new Chart(ctx, {
             type: 'pie',
             data: {
@@ -217,4 +177,4 @@
             }
         });
     </script>
-    @endsection
+    @endsection -->
