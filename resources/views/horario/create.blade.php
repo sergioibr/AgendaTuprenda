@@ -25,7 +25,7 @@
                                 <select name="id_persona" oninvalid="setCustomValidity('Seleccione un persona')" oninput="setCustomValidity('')" required>
                                     <option value="" disabled selected>Escoja uno</option>
                                     @foreach($empleados as $empleado)
-                                        <option value="{{$empleado->id}}">{{$empleado->cargo}}</option>
+                                        <option value="{{$empleado->id_persona}}">{{$empleado->cargo}}</option>
                                     @endforeach
                                 </select>
                                 <label>Seleccione una persona</label>
