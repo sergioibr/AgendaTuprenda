@@ -34,6 +34,18 @@
                             <p class="accent-color-text">{{$tarea->duracionEstimada}}</p>
                         </div>
                         
+                        <div class="col s12 m4">
+                            <p class="light-secondary-color title-text-style ">Empleado :</p>
+                        </div>
+                        <div class="col s8 offset-s2 m8">
+                            <p class="accent-color-text">{{$EmpleadoTarea->Empleado->Persona->nombre}} {{$EmpleadoTarea->Empleado->Persona->apellido_paterno}} - {{$EmpleadoTarea->Empleado->cargo}}</p>
+                        </div> 
+                        <div class="col s12 m4">
+                            <p class="light-secondary-color title-text-style ">Tarea :</p>
+                        </div>
+                        <div class="col s8 offset-s2 m8">
+                            <p class="accent-color-text">{{$EmpleadoTarea->Tarea->descripcion}}</p>
+                        </div> 
                     </div>
 
                 </div>

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Tarea;
 use App\Models\EmpleadoTarea;
+use App\Models\Empleado;
+use App\Models\Persona;
 use App\Models\Pagina;
 
 class EmpleadoTareaController extends Controller
@@ -32,7 +34,7 @@ class EmpleadoTareaController extends Controller
 
     public function show($id){
         Pagina::contarPagina(\request()->path());
-        $EmpleadoTarea = EmpleadoTarea::findOrFail($id);
+        $EmpleadoTarea = EmpleadoTarea::with('Empleado')->with('Empleado.Persona')->with('Tarea')->findOrFail($id);
         $tarea = Tarea::where('id', $EmpleadoTarea->id_tareas)->first();
         return view('empleadoTarea.show', compact('tarea','EmpleadoTarea'));
     }
